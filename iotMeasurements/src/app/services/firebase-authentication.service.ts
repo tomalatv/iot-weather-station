@@ -22,14 +22,12 @@ export class FirebaseAuthenticationService {
   }
 
     public doLogin(value): Promise<any> {
-      console.log('Do login: ', value);
       return new Promise<any>((resolve, reject) => {
         firebase.auth().signInWithEmailAndPassword(value.email, value.password).then(
             res => {
               resolve(res);
             },
             err => {
-              console.log('EEE ', err);
               reject(err);
             }
         );
