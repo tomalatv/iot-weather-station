@@ -10,7 +10,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./measurements.page.scss'],
 })
 export class MeasurementsPage implements OnInit {
-  
+
   public measurements: Array<Measurement>;
   public description: string;
   public temperature: Array<{}>;
@@ -25,7 +25,7 @@ export class MeasurementsPage implements OnInit {
     private sensorService: SensorService,
     private alertCtrl: AlertController
     ) { }
-  
+
   ngOnInit() {
     this.isLoadReady = false;
     this.activatedRoute.paramMap.subscribe((paramMap) => {

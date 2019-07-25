@@ -18,7 +18,7 @@ export class SensorService {
   }
 
   public sensors(): void {
-    console.log('### sensors page ngOnInit() - ', this.app);
+
     // return from(new Promise<Array<Sensor>>((resolve) => {
     // return from(
     this.db.collection('iotdevices').get().then(
