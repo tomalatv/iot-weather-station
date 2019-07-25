@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="start">
+       <ion-back-button defaultHref="/sensors"></ion-back-button>
+     </ion-buttons>
+    <ion-title>{{description}} measurements</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>  
+  <ion-card>
+    <ion-card-header>
+      <h3>Temperature</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <app-line-chart
+      *ngIf="isLoadReady" 
+      [data]="temperature" 
+      type="temperature"
+      line-color="red"
+      chart-vertical-text="Temperature ˚C"
+      [ngClass]="'temperature'">
+    </app-line-chart>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h3>Humidity</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <app-line-chart 
+      *ngIf="isLoadReady" 
+      [data]="humidity" 
+      type="humidity"
+      line-color="greenyellow"
+      chart-vertical-text="Humidity %" 
+      [ngClass]="'humidity'">
+    </app-line-chart>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <h3>Pressure</h3>
+    </ion-card-header>
+    <ion-card-content>
+      <app-line-chart
+      *ngIf="isLoadReady" 
+      [data]="pressure" 
+      type="pressure"
+      line-color="blue"
+      margin-left=45
+      chart-vertical-text="Pressure hPa" 
+      [ngClass]="'pressure'">
+    </app-line-chart>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
